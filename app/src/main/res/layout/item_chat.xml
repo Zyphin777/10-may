@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp"
+    android:background="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true">
+
+    <!-- Profile photo — circular clip via bg_avatar_circle -->
+    <ImageView
+        android:id="@+id/chatProfileImage"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:scaleType="centerCrop"
+        android:background="@drawable/bg_avatar_placeholder"
+        android:src="@android:drawable/ic_menu_camera"
+        android:contentDescription="Profile Photo" />
+
+    <!-- Timestamp — top right -->
+    <TextView
+        android:id="@+id/chatTimestamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="2dp"
+        android:text="2h ago"
+        android:textSize="11sp"
+        android:textColor="#9E9E9E" />
+
+    <!-- Unread badge — below timestamp -->
+    <TextView
+        android:id="@+id/chatUnreadBadge"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/chatTimestamp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/bg_unread_badge"
+        android:text="3"
+        android:textSize="11sp"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:visibility="gone" />
+
+    <!-- Reconnect button — replaces unread when shown -->
+    <Button
+        android:id="@+id/reconnectBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/chatTimestamp"
+        android:layout_marginTop="4dp"
+        android:text="Connect"
+        android:textSize="11sp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:visibility="gone" />
+
+    <!-- Text content column -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/chatProfileImage"
+        android:layout_toStartOf="@id/chatTimestamp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical">
+
+        <!-- Display name -->
+        <TextView
+            android:id="@+id/chatUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="User Name"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#1A1A1A"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+        <!-- Distance (NEW) -->
+        <TextView
+            android:id="@+id/chatUserDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="11sp"
+            android:textColor="#673AB7"
+            android:visibility="gone"
+            android:drawablePadding="3dp" />
+
+        <!-- Last message -->
+        <TextView
+            android:id="@+id/chatLastMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Last message preview..."
+            android:textSize="13sp"
+            android:textColor="#757575"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  PATCH: Replace the existing item_message.xml entirely.
+  Only addition is the LOCATION MESSAGE block at the bottom of the inner LinearLayout.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/messageContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="4dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- TEXT MESSAGE -->
+        <TextView
+            android:id="@+id/messageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="280dp"
+            android:padding="12dp"
+            android:text="Sample message"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:layout_margin="4dp" />
+
+        <!-- IMAGE MESSAGE -->
+        <ImageView
+            android:id="@+id/messageImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="280dp"
+            android:maxHeight="200dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:padding="4dp"
+            android:layout_margin="4dp"
+            android:visibility="gone" />
+
+        <!-- VOICE MESSAGE -->
+        <LinearLayout
+            android:id="@+id/voiceMessageLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_margin="4dp"
+            android:gravity="center_vertical"
+            android:maxWidth="280dp"
+            android:visibility="gone">
+
+            <ImageButton
+                android:id="@+id/playVoiceBtn"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@android:drawable/ic_media_play"
+                android:background="@android:color/transparent"
+                android:contentDescription="Play Voice"
+                app:tint="@android:color/white" />
+
+            <TextView
+                android:id="@+id/voiceDurationText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="0:00"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- DOCUMENT MESSAGE -->
+        <LinearLayout
+            android:id="@+id/documentMessageLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:layout_margin="4dp"
+            android:gravity="center_vertical"
+            android:maxWidth="280dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/documentIcon"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@android:drawable/ic_menu_save"
+                android:contentDescription="Document Icon"
+                app:tint="#1976D2" />
+
+            <TextView
+                android:id="@+id/documentFileNameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="document.pdf"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:maxLines="2"
+                android:ellipsize="middle" />
+        </LinearLayout><!-- ═══ LOCATION MESSAGE (NEW) ═══════════════════════════════════ -->
+        <LinearLayout
+            android:id="@+id/locationMessageLayout"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_location_card"
+            android:layout_margin="4dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:visibility="gone">
+
+            <!-- Static map thumbnail -->
+            <ImageView
+                android:id="@+id/locationMapThumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:scaleType="centerCrop"
+                android:background="#E0E0E0"
+                android:src="@android:drawable/ic_dialog_map"
+                android:contentDescription="Map preview" />
+
+            <!-- Pin + label row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@android:drawable/ic_dialog_map"
+                    android:contentDescription="Pin"
+                    app:tint="#673AB7" />
+
+                <TextView
+                    android:id="@+id/locationLabelText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="6dp"
+                    android:text="Shared Location"
+                    android:textSize="13sp"
+                    android:textColor="#212121"
+                    android:maxLines="1"
+                    android:ellipsize="end" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tap to open in Maps"
+                android:textSize="11sp"
+                android:textColor="#9E9E9E"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="8dp" />
+
+        </LinearLayout>
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+
+        <!-- MESSAGE STATUS -->
+        <TextView
+            android:id="@+id/messageStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:textColor="#757575"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="4dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</LinearLayout>

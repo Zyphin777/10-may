@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">OfflineRoutingApp</string>
+    <string name="discover_devices">Discover Devices</string>
+    <string name="nearby_devices">Nearby Devices:</string>
+    <string name="permission_required">Nearby devices permission required</string>
+    <string name="search_started">Started searching for devices</string>
+    <string name="discovery_failed">Discovery failed: %1$d</string>
+    <string name="permission_granted">Permission granted</string>
+    <string name="permission_denied">Permission denied, cannot use WiFi Direct</string>
+    <string name="no_devices_found">No devices found</string>
+    <string name="connecting">Connecting...</string>
+    <string name="connected">Connected</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="connection_failed">Connection failed</string>
+    <string name="type_message">Type a message...</string>
+    <string name="send">Send</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="group_owner">Group Owner</string>
+    <string name="client">Client</string>
+
+
+    <!-- ChatActivity strings -->
+    <string name="back">Back</string>
+    <string name="profile">Profile</string>
+    <string name="user_name">User Name</string>
+    <string name="send_image">Send Image</string>
+    <string name="send_voice_message">Send Voice Message</string>
+    <string name="voice_message">🎤 Voice Message</string>
+    <string name="recording_in_progress">Recording...</string>
+    <string name="send_document">Send Document</string>
+    <string name="document_file">📄 Document File</string>
+    <!-- Nearby Map -->
+    <string name="nearby_map">Nearby Map</string>
+    <string name="no_users_nearby">No users nearby</string>
+    <string name="users_nearby">%1$d users nearby</string>
+    <string name="tap_to_open_maps">Tap to open in Maps</string>
+    <string name="open_chat">Open Chat</string>
+    <!-- Location sharing -->
+    <string name="share_location">Share Location</string>
+    <string name="shared_location">📍 Location</string>
+    <string name="getting_location">Getting location…</string>
+    <string name="location_permission_denied">Location permission denied.</string>
+    <string name="could_not_get_location">Could not get location. Try again.</string>
+</resources>
